@@ -81,4 +81,6 @@ library(reshape2)
 melt<-melt(data,id=c("activity","subject"),measure.vars=(colnames(data)[1:66]))
 means<-dcast(melt,activity+subject~variable,mean)
 
+##New tidy data set is written to a file called tinydata.txt
+
 write.table(means,file="./tidydata.txt")
